@@ -1,0 +1,12 @@
+/* Add Custom Button Hover Effect */
+.btn-warning:hover {
+    background-color: #ffcc00 !important;
+    color: #000 !important;
+    box-shadow: 0 5px 10px rgba(255, 204, 0, 0.5);
+}
+
+/* Footer Styling */
+footer {
+    font-size: 0.9rem;
+    border-top: 3px solid #555;
+}
