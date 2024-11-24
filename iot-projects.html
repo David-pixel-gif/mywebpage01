@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Projects - Blue Phoenix Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background: linear-gradient(120deg, #007bff, #6a11cb);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure header stays above other elements */
+        }
+        .category-filter {
+            text-align: center;
+            margin-bottom: 30px;
+            z-index: 999; /* Ensure buttons are clickable and above other elements */
+        }
+        .category-filter button {
+            margin: 5px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            height: 150px;
+            object-fit: cover;
+        }
+        .card-body {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        }
+        .btn-primary {
+            background: linear-gradient(120deg, #6a11cb, #007bff);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(120deg, #007bff, #6a11cb);
+        }
+        .dark-mode {
+            background: #121212;
+            color: white;
+        }
+        .dark-mode .card-body {
+            background: #333;
+        }
+        footer {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="py-5 position-relative" style="background: linear-gradient(135deg, #007bff, #6a11cb, #ff7e5f); color: white;">
+    <div class="container text-center">
+        <h1 class="fw-bold display-4 text-uppercase">Top Areas for IoT Projects to Research on for Beginners in 2024</h1>
+        <p class="lead mt-3">Discover cutting-edge IoT ideas and master the future of technology.</p>
+        <div class="mt-4">
+            <button class="btn btn-outline-light btn-lg me-2 shadow-sm" onclick="toggleDarkMode()">
+                <i class="bi bi-moon-stars"></i> Toggle Dark Mode
+            </button>
+            <a href="#projects" class="btn btn-warning btn-lg shadow-sm">
+                <i class="bi bi-box-arrow-down"></i> Explore Projects
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Category Filter -->
+<div class="category-filter text-center py-3 bg-light shadow-sm">
+    <button class="btn btn-primary btn-sm me-2" onclick="filterProjects('healthcare')">Healthcare</button>
+    <button class="btn btn-secondary btn-sm me-2" onclick="filterProjects('smart-home')">Smart Home</button>
+    <button class="btn btn-success btn-sm me-2" onclick="filterProjects('gaming')">Gaming</button>
+    <button class="btn btn-info btn-sm me-2" onclick="filterProjects('environment')">Environment</button>
+    <button class="btn btn-warning btn-sm me-2" onclick="filterProjects('fitness')">Fitness</button>
+    <button class="btn btn-danger btn-sm" onclick="filterProjects('all')">All</button>
+</div>
+
+<!-- IoT Description -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">What is the Internet of Things (IoT)?</h2>
+
+    <!-- Overview -->
+    <div class="mb-5">
+        <div class="d-flex align-items-start">
+            <img src="https://img.icons8.com/ios-filled/50/000000/globe.png" alt="Globe Icon" class="me-3">
+            <div>
+                <h3 class="text-primary">Overview of IoT</h3>
+                <p>
+                    The Internet of Things (IoT) refers to a network of connected devices and technology that enables communication between them and the cloud. With billions of devices now connected, IoT powers everyday objects like cars, appliances, and sensors to collect data and respond intelligently, transforming our world.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- How IoT Works -->
+    <div class="mb-5">
+        <div class="d-flex align-items-start">
+            <img src="https://img.icons8.com/ios-filled/50/000000/engineering.png" alt="Engineering Icon" class="me-3">
+            <div>
+                <h3 class="text-primary">How Does IoT Work?</h3>
+                <p>
+                    IoT systems work through the collection and exchange of data in real time. A typical IoT system consists of:
+                </p>
+                <ul>
+                    <li><strong>Smart Devices:</strong> Devices like sensors or cameras that collect and send data.</li>
+                    <li><strong>IoT Applications:</strong> Software that analyzes data and makes intelligent decisions.</li>
+                    <li><strong>User Interface:</strong> Apps or dashboards used to monitor and control devices.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Examples of IoT Devices -->
+    <div class="mb-5">
+        <div class="d-flex align-items-start">
+            <img src="statics\images\SMART HOME.jpg" alt="Smart Home Icon" class="me-3">
+            <div>
+                <h3 class="text-primary">Examples of IoT Devices</h3>
+                <p>
+                    IoT devices are everywhere, enhancing automation and efficiency across industries. Examples include:
+                </p>
+                <ul>
+                    <li><strong>Connected Cars:</strong> Collect data to monitor performance and notify emergencies.</li>
+                    <li><strong>Smart Homes:</strong> Use devices like thermostats, security cameras, and smart appliances.</li>
+                    <li><strong>Industrial Systems:</strong> Improve manufacturing, logistics, and maintenance efficiency.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits of IoT -->
+    <div class="mb-5">
+        <div class="d-flex align-items-start">
+            <img src="https://img.icons8.com/ios-filled/50/000000/innovation.png" alt="Innovation Icon" class="me-3">
+            <div>
+                <h3 class="text-primary">Benefits of IoT</h3>
+                <p>
+                    IoT offers transformative benefits by automating tasks, providing real-time insights, and improving efficiency:
+                </p>
+                <ul>
+                    <li><strong>Accelerated Innovation:</strong> Uncover new opportunities through advanced analytics.</li>
+                    <li><strong>Improved Productivity:</strong> Automate mundane tasks to focus on creative work.</li>
+                    <li><strong>Enhanced Efficiency:</strong> Monitor and optimize processes in real time.</li>
+                    <li><strong>Better Decision Making:</strong> Use data-driven insights to inform strategies.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- IoT Examples -->
+<main class="container my-5">
+    <h2 class="text-center mb-4 text-uppercase text-primary">Top IoT Examples</h2>
+
+    <!-- Connected Cars -->
+    <section class="mb-5">
+        <h3 class="text-center text-secondary mb-4"style="font-size: 4rem; font-weight: bold;"> 🏠 CONNECTED CARS</h3>
+        <article class="d-flex mb-4 p-3 shadow-sm rounded" style="background: #f9f9f9;">
+            <img src="statics\images\Audi’s connect® System.jpg" alt="Audi Connect" class="me-4 rounded" style="width: 200px; height: auto; object-fit: cover;">
+            <div>
+                <h4 class="text-primary">Audi’s connect® System</h4>
+                <p>Enables drivers to control vehicle temperature, review driving data, and receive EV charging status updates directly on their phones. Partnerships with Cisco ensure data security.</p>
+            </div>
+        </article>
+        <article class="d-flex mb-4 p-3 shadow-sm rounded" style="background: #f9f9f9;">
+            <img src="statics\images\Zubie’s IoT Fleet Tracking.jpg" alt="Zubie Fleet Tracking" class="me-4 rounded" style="width: 200px; height: auto; object-fit: cover;">
+            <div>
+                <h4 class="text-primary">Zubie’s IoT Fleet Tracking</h4>
+                <p>Monitors vehicle health, GPS locations, and driver behavior to improve fuel efficiency and avoid accidents. Aimed at rental and business fleets.</p>
+            </div>
+        </article>
+        <article class="d-flex mb-4 p-3 shadow-sm rounded" style="background: #f9f9f9;">
+            <img src="statics\images\Tesla’s Connectivity Service.jpg" alt="Tesla Connectivity" class="me-4 rounded" style="width: 200px; height: auto; object-fit: cover;">
+            <div>
+                <h4 class="text-primary">Tesla’s Connectivity Service</h4>
+                <p>Offers features like real-time charging history, navigation, and roadside assistance. Premium connectivity provides seamless integration via Wi-Fi or cellular data.</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- Smart Home Appliances -->
+    <section class="mb-5">
+        <h3 class="text-center text-secondary mb-4"style="font-size: 4rem; font-weight: bold;"> 🏠 SMART HOME APPLIANCES</h3>
+        <article class="d-flex mb-4 p-3 shadow-sm rounded" style="background: #f9f9f9;">
+            <img src="statics\images\LG Electronics’ ThinQ Appliances.jpg" alt="LG ThinQ" class="me-4 rounded" style="width: 200px; height: auto; object-fit: cover;">
+            <div>
+                <h4 class="text-primary">LG Electronics’ ThinQ Appliances</h4>
+                <p>Integrates AI to notify users of maintenance needs. ThinQ refrigerators, washers, and dryers connect seamlessly to Google Assistant and Alexa.</p>
+            </div>
+        </article>
+        <article class="d-flex mb-4 p-3 shadow-sm rounded" style="background: #f9f9f9;">
+            <img src="statics\images\Samsung Electronics’ Smart Appliances.jpg" alt="Samsung Smart Appliances" class="me-4 rounded" style="width: 200px; height: auto; object-fit: cover;">
+            <div>
+                <h4 class="text-primary">Samsung Electronics’ Smart Appliances</h4>
+                <p>Connected home systems allow users to monitor fridges, vacuums, and TVs through their smartphones. Smart notifications enhance user convenience.</p>
+            </div>
+        </article>
+        <article class="d-flex mb-4 p-3 shadow-sm rounded" style="background: #f9f9f9;">
+            <img src="statics\images\Tovala’s Smart Oven.jpg" alt="Tovala Smart Oven" class="me-4 rounded" style="width: 200px; height: auto; object-fit: cover;">
+            <div>
+                <h4 class="text-primary">Tovala’s Smart Oven</h4>
+                <p>Works with a subscription-based meal delivery service. Scans QR codes to automatically set the perfect temperature and cooking time.</p>
+            </div>
+        </article>
+    </section>
+
+<!-- CONNECTED SECURITY SYSTEMS -->
+<section class="mb-5">
+    <h2 class="text-center text-secondary mb-4" style="font-size: 4rem; font-weight: bold;">🔒 CONNECTED SECURITY SYSTEMS</h2>
+    
+    <!-- Wyze Security Cameras -->
+    <article class="d-flex align-items-center mb-4 p-4 shadow-lg rounded" style="background: #ffffff; transition: transform 0.3s ease;">
+        <img src="statics\images\gray-wyze.avif" alt="Wyze Security Cameras" class="me-4 rounded shadow-sm" style="width: 220px; height: auto; object-fit: cover; border: 3px solid #007bff;">
+        <div>
+            <h3 class="text-primary mb-2" style="font-size: 1.5rem; border-bottom: 2px solid #007bff; display: inline-block; padding-bottom: 5px;">
+                Wyze’s Smart Security Cameras
+            </h3>
+            <p>Provides wired and wireless cameras for real-time home monitoring. Wyze's app allows seamless integration of other smart home devices.</p>
+        </div>
+    </article>
+
+    <!-- Josh.ai Integrated IoT System -->
+    <article class="d-flex align-items-center mb-4 p-4 shadow-lg rounded" style="background: #ffffff; transition: transform 0.3s ease;">
+        <img src="statics\images\Josh.ai" alt="Josh AI" class="me-4 rounded shadow-sm" style="width: 220px; height: auto; object-fit: cover; border: 3px solid #6a11cb;">
+        <div>
+            <h3 class="text-primary mb-2" style="font-size: 1.5rem; border-bottom: 2px solid #6a11cb; display: inline-block; padding-bottom: 5px;">
+                Josh.ai Integrated IoT System
+            </h3>
+            <p>Voice-controlled home automation platform that manages devices like doorbell cameras and smart locks. Users can control security via the Josh app.</p>
+        </div>
+    </article>
+
+    <!-- SimpliSafe Sensors -->
+    <article class="d-flex align-items-center mb-4 p-4 shadow-lg rounded" style="background: #ffffff; transition: transform 0.3s ease;">
+        <img src="statics\images\SimpliSafe’s.webp" alt="SimpliSafe Sensors" class="me-4 rounded shadow-sm" style="width: 220px; height: auto; object-fit: cover; border: 3px solid #ff7e5f;">
+        <div>
+            <h3 class="text-primary mb-2" style="font-size: 1.5rem; border-bottom: 2px solid #ff7e5f; display: inline-block; padding-bottom: 5px;">
+                SimpliSafe’s Glass Break Sensors
+            </h3>
+            <p>Distinguishes between bottle and glass shattering, reducing false alarms. Offers wireless, disaster-ready systems with deep encryption for added security.</p>
+        </div>
+    </article>
+</section>
+
+
+    <!-- Smart Agriculture -->
+    <section class="mb-5">
+        <h3 class="text-center text-secondary mb-4"style="font-size: 4rem; font-weight: bold;">🌾 SMART AGRICULTURE</h3>
+        <article class="d-flex mb-4 p-3 shadow-sm rounded" style="background: #f9f9f9;">
+            <img src="statics\images\john-deere.jpg" alt="John Deere Precision Farming" class="me-4 rounded" style="width: 200px; height: auto; object-fit: cover;">
+            <div>
+                <h4 class="text-primary">John Deere’s Precision Farming Equipment</h4>
+                <p>Uses IoT sensors to monitor moisture levels, temperature, and wind speed. Satellite-enabled tractors allow farmers to optimize fertilizer and pesticide use.</p>
+            </div>
+        </article>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="text-center text-white" style="background-color: #45637d; margin-top: 50px;">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!-- Social Media Section -->
+        <section class="mb-4">
+            <p>Follow us on:</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="https://facebook.com" target="_blank" class="text-white">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="text-white">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="text-white">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="text-white">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+            </div>
+        </section>
+        <!-- Social Media Section -->
+
+        <!-- Section: Iframe -->
+       <!-- Embed YouTube Video -->
+<div class="container text-center my-5">
+    <h2 class="mb-4">Watch Related Video</h2>
+    <div class="ratio ratio-16x9">
+        <iframe 
+            src="https://www.youtube.com/embed/5r05v9aH1sM" 
+            title="YouTube video" 
+            allowfullscreen
+            class="rounded shadow">
+        </iframe>
+    </div>
+</div>
+
+        <!-- Section: Iframe -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        &copy; 2024 Blue Phoenix Solutions. All Rights Reserved. | Powered by
+        <a class="text-white" href="https://mdbootstrap.com/" target="_blank">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
+<!-- Scripts -->
+<script>
+    // Filter projects by category
+    function filterProjects(category) {
+        const projects = document.querySelectorAll('.category');
+        projects.forEach(project => {
+            if (category === 'all' || project.classList.contains(category)) {
+                project.style.display = 'block';
+            } else {
+                project.style.display = 'none';
+            }
+        });
+    }
+
+    // Toggle dark mode
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Add hover effect to social media icons
+    const socialIcons = document.querySelectorAll('.social-icons a');
+    socialIcons.forEach(icon => {
+        icon.addEventListener('mouseover', () => {
+            icon.style.transform = 'scale(1.2)';
+        });
+        icon.addEventListener('mouseout', () => {
+            icon.style.transform = 'scale(1)';
+        });
+    });
+</script>
+
